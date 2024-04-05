@@ -87,18 +87,15 @@ def slices(slices_in,           # the 2D slices
     # prepare the subplot
     fig, axs = plt.subplots(rows, cols)
 
-    ##############################################################################
-        # Reshape axs to correspond to shape: (rows, cols)
-        # For example, with rows = 1 and cols = 8, axs will be of shape: (1, 8) [[Axes(), Axes() ...]]
-        # Another example, with rows = 1 and cols = 1, axs will be of shape: (1, 1) [[Axes()]]
+    ## Reshape axs to correspond to shape: (rows, cols)
+    # For example, with rows = 1 and cols = 8, axs will be of shape: (1, 8) [[Axes(), Axes() ...]]
+    # Another example, with rows = 1 and cols = 1, axs will be of shape: (1, 1) [[Axes()]]
     if rows == 1 and cols == 1: 
         axs = [[axs]]
     elif rows == 1: 
         axs = [axs]
     elif cols == 1: 
         axs = [[ax] for ax in axs]
-    ###############################################################################
-
 
     for i in range(nb_plots):
         col = np.remainder(i, cols)
