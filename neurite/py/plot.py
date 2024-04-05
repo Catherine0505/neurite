@@ -45,7 +45,7 @@ def slices(slices_in,           # the 2D slices
     '''
 
     # input processing
-    if type(slices_in) == np.ndarray:
+    if isinstance(slices_in, np.ndarray):
         slices_in = [slices_in]
     nb_plots = len(slices_in)
     slices_in = list(map(np.squeeze, slices_in))
@@ -87,7 +87,7 @@ def slices(slices_in,           # the 2D slices
     # prepare the subplot
     fig, axs = plt.subplots(rows, cols)
 
-    ## Reshape axs to correspond to shape: (rows, cols)
+    # Reshape axs to correspond to shape: (rows, cols)
     # For example, with rows = 1 and cols = 8, axs will be of shape: (1, 8) [[Axes(), Axes() ...]]
     # Another example, with rows = 1 and cols = 1, axs will be of shape: (1, 1) [[Axes()]]
     if rows == 1 and cols == 1: 
